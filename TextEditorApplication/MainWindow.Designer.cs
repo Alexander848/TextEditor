@@ -1,0 +1,119 @@
+﻿using System.Windows.Forms;
+
+namespace TextEditorApplication
+{
+    partial class MainWindow
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            mainTextBox = new TextBox();
+            menuStrip = new MenuStrip();
+            fileMenu = new ToolStripMenuItem();
+            menuItemEdit = new ToolStripMenuItem();
+            menuItemSettings = new ToolStripMenuItem();
+            openMenu = new ToolStripMenuItem();
+            saveMenu = new ToolStripMenuItem();
+            saveAsMenu = new ToolStripMenuItem();
+            menuStrip.SuspendLayout();
+            SuspendLayout();
+            // 
+            // mainTextBox
+            // 
+            mainTextBox.Multiline = true;
+            mainTextBox.Name = "mainTextBox";
+            mainTextBox.Dock = DockStyle.Fill;
+            mainTextBox.TabIndex = 0;
+            // 
+            // menuStrip
+            // 
+            menuStrip.Items.AddRange(new ToolStripItem[] { fileMenu, menuItemEdit, menuItemSettings });
+            menuStrip.Name = "menuStrip";
+            menuStrip.Dock = DockStyle.Top;
+            menuStrip.TabIndex = 1;
+            menuStrip.Text = "menuStrip";
+            // 
+            // fileMenu
+            // 
+            fileMenu.DropDownItems.AddRange(new ToolStripItem[] { openMenu, saveMenu, saveAsMenu });
+            fileMenu.Name = "fileMenu";
+            fileMenu.Text = "File";
+            // 
+            // openMenu
+            // 
+            openMenu.Name = "openMenu";
+            openMenu.Text = "Open";
+            // 
+            // saveMenu
+            // 
+            saveMenu.Name = "saveMenu";
+            saveMenu.Text = "Save";
+            // 
+            // saveAsMenu
+            // 
+            saveAsMenu.Name = "saveAsMenu";
+            saveAsMenu.Text = "Save As";
+            // 
+            // menuItemEdit
+            // 
+            menuItemEdit.Name = "menuItemEdit";
+            menuItemEdit.Text = "Edit";
+            // 
+            // menuItemSettings
+            // 
+            menuItemSettings.Name = "menuItemSettings";
+            menuItemSettings.Text = "Settings";
+            // 
+            // MainWindow
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            StartPosition = FormStartPosition.CenterScreen;
+            Controls.Add(mainTextBox);
+            Controls.Add(menuStrip);
+            MainMenuStrip = menuStrip;
+            Name = "MainWindow";
+            Text = "Text Editor";
+            Load += MainWindow_Load;
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private TextBox mainTextBox;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem fileMenu;
+        private ToolStripMenuItem menuItemEdit;
+        private ToolStripMenuItem menuItemSettings;
+        private ToolStripMenuItem openMenu;
+        private ToolStripMenuItem saveMenu;
+        private ToolStripMenuItem saveAsMenu;
+    }
+}
