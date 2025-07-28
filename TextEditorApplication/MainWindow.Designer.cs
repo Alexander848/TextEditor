@@ -61,7 +61,7 @@ namespace TextEditorApplication
             fileMenu.DropDownItems.AddRange(new ToolStripItem[] { openMenu, saveMenu, saveAsMenu });
             fileMenu.Name = "fileMenu";
             fileMenu.Text = "File";
-            // 
+            //
             // openMenu
             // 
             openMenu.Name = "openMenu";
