@@ -21,7 +21,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build solution
-        run: dotnet build TextEditor.sln --no-restore
+        run: dotnet build TextEditor.sln --configuration Release --no-restore
       
   test:
     needs: build
@@ -33,4 +33,4 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Test
-        run: dotnet test TextEditorTest/TextEditorTest.csproj --no-build --verbosity normal
+        run: dotnet test TextEditorTest/TextEditorTest.csproj --configuration Release --no-build --verbosity normal
