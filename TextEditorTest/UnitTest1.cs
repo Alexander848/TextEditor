@@ -2,10 +2,15 @@ namespace TextEditorTest
 {
     public class Tests
     {
-        [Test]
-        public void TempTest()
+        [SetUp]
+        public void Setup()
         {
-            Assert.That(5, Is.EqualTo(5));
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
         }
     }
 }

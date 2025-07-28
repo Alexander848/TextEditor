@@ -22,15 +22,5 @@ jobs:
         run: dotnet restore
       - name: Build solution
         run: dotnet build TextEditor.sln --configuration Release --no-restore
-      
-  test:
-    needs: build
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
       - name: Test
         run: dotnet test TextEditorTest/TextEditorTest.csproj --configuration Release --no-build --verbosity normal
