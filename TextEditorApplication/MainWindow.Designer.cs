@@ -35,9 +35,9 @@ namespace TextEditorApplication
             fileMenu = new ToolStripMenuItem();
             menuItemEdit = new ToolStripMenuItem();
             menuItemSettings = new ToolStripMenuItem();
-            openMenu = new ToolStripMenuItem();
-            saveMenu = new ToolStripMenuItem();
-            saveAsMenu = new ToolStripMenuItem();
+            openFile = new ToolStripMenuItem();
+            saveFile = new ToolStripMenuItem();
+            saveAsFile = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,25 +58,27 @@ namespace TextEditorApplication
             // 
             // fileMenu
             // 
-            fileMenu.DropDownItems.AddRange(new ToolStripItem[] { openMenu, saveMenu, saveAsMenu });
+            fileMenu.DropDownItems.AddRange(new ToolStripItem[] { openFile, saveFile, saveAsFile });
             fileMenu.Name = "fileMenu";
             fileMenu.Text = "File";
             // 
-            // openMenu
+            // openFile
             // 
-            openMenu.Name = "openMenu";
-            openMenu.Text = "Open";
-            openMenu.Click += OpenMenu_Click;
+            openFile.Name = "openFile";
+            openFile.Text = "Open";
+            openFile.Click += OpenFile_Click;
             // 
-            // saveMenu
+            // saveFile
             // 
-            saveMenu.Name = "saveMenu";
-            saveMenu.Text = "Save";
+            saveFile.Name = "saveFile";
+            saveFile.Text = "Save";
+            saveFile.Click += SaveFile_Click;
             // 
-            // saveAsMenu
+            // saveAsFile
             // 
-            saveAsMenu.Name = "saveAsMenu";
-            saveAsMenu.Text = "Save As";
+            saveAsFile.Name = "saveAsFile";
+            saveAsFile.Text = "Save As";
+            saveAsFile.Click += SaveAsFile_Click;
             // 
             // menuItemEdit
             // 
@@ -113,8 +115,8 @@ namespace TextEditorApplication
         private ToolStripMenuItem fileMenu;
         private ToolStripMenuItem menuItemEdit;
         private ToolStripMenuItem menuItemSettings;
-        private ToolStripMenuItem openMenu;
-        private ToolStripMenuItem saveMenu;
-        private ToolStripMenuItem saveAsMenu;
+        private ToolStripMenuItem openFile;
+        private ToolStripMenuItem saveFile;
+        private ToolStripMenuItem saveAsFile;
     }
 }
