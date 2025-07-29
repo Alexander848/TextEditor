@@ -1,7 +1,6 @@
 ﻿namespace TextEditorLibrary
 {
-    public class Class1
+    public class FileOperations
     {
-
     }
 }

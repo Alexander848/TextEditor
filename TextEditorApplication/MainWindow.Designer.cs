@@ -61,11 +61,12 @@ namespace TextEditorApplication
             fileMenu.DropDownItems.AddRange(new ToolStripItem[] { openMenu, saveMenu, saveAsMenu });
             fileMenu.Name = "fileMenu";
             fileMenu.Text = "File";
-            //
+            // 
             // openMenu
             // 
             openMenu.Name = "openMenu";
             openMenu.Text = "Open";
+            openMenu.Click += OpenMenu_Click;
             // 
             // saveMenu
             // 
@@ -91,7 +92,7 @@ namespace TextEditorApplication
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(Screen.PrimaryScreen.Bounds.Width/4*3, Screen.PrimaryScreen.Bounds.Height/4*3);
             StartPosition = FormStartPosition.CenterScreen;
             Controls.Add(mainTextBox);
             Controls.Add(menuStrip);
