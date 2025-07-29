@@ -5,6 +5,7 @@ namespace TextEditorApplication
     public partial class MainWindow : Form
     {
         private string lastOpenedDirectory = "C:\\";
+        private string currentFile = "";
 
         public MainWindow()
         {
@@ -18,20 +19,20 @@ namespace TextEditorApplication
 
         private void OpenMenu_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using OpenFileDialog openFileDialog = new();
+            openFileDialog.InitialDirectory = lastOpenedDirectory;
+            openFileDialog.Filter = "Textdateien (*.txt)|*.txt";
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                openFileDialog.InitialDirectory = lastOpenedDirectory;
-                openFileDialog.Filter = "Textdateien (*.txt)|*.txt";
-                openFileDialog.RestoreDirectory = true;
+                currentFile = openFileDialog.FileName;
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string selectedFilePath = openFileDialog.FileName;
+                mainTextBox.Text = File.ReadAllText(currentFile);
 
-                    mainTextBox.Text = File.ReadAllText(selectedFilePath);
+                lastOpenedDirectory = FileOperations.RemoveFilenameFromPath(currentFile);
 
-                    lastOpenedDirectory = FileOperations.RemoveFilenameFromPath(selectedFilePath);
-                }
+                this.Text = currentFile;
             }
         }
     }
