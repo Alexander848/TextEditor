@@ -1,3 +1,5 @@
+using TextEditorLibrary;
+
 namespace TextEditorApplication
 {
     public partial class MainWindow : Form
@@ -19,7 +21,7 @@ namespace TextEditorApplication
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = lastOpenedDirectory;
-                openFileDialog.Filter = "Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+                openFileDialog.Filter = "Textdateien (*.txt)|*.txt";
                 openFileDialog.RestoreDirectory = true;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -27,6 +29,8 @@ namespace TextEditorApplication
                     string selectedFilePath = openFileDialog.FileName;
 
                     mainTextBox.Text = File.ReadAllText(selectedFilePath);
+
+                    lastOpenedDirectory = FileOperations.RemoveFilenameFromPath(selectedFilePath);
                 }
             }
         }
